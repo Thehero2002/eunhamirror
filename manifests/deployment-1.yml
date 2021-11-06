@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "mirror-fa32"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "mirror-fa32"
+  template:
+    metadata:
+      labels:
+        app: "mirror-fa32"
+    spec:
+      containers:
+        - name: "mirror-fa32"
+          image: "herooo.azurecr.io/mirror"
+          ports:
+          - containerPort: 80
