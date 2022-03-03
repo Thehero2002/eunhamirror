@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "mirrorbot-4810"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "mirrorbot-4810"
+  template:
+    metadata:
+      labels:
+        app: "mirrorbot-4810"
+    spec:
+      containers:
+        - name: "mirrorbot-4810"
+          image: "mirrorbot2002.azurecr.io/mirrorbot"
+          ports:
+          - containerPort: 80
